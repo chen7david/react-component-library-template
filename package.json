@@ -1,0 +1,24 @@
+{
+  "name": "react-component-library-template",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chen7david/react-component-library-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chen7david/react-component-library-template/issues"
+  },
+  "homepage": "https://github.com/chen7david/react-component-library-template#readme",
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "react": "^18.2.0",
+    "typescript": "^5.1.6"
+  }
+}
