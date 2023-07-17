@@ -116,5 +116,11 @@
     "moduleResolution": "node", // the resolution algorythm used for resolving imports
     "allowSyntheticDefaultImports": true, // what to do when we don't have default exports
     "emitDeclarationOnly": true // use ts to only bundle type files. We want rollup to take care of the js files
-  }
+  },
+  "exclude": [
+    "**/tests",
+    "**/*.test.ts",
+    "**/*.test.ts",
+    "**/*.stories.ts",
+  ]
 }

@@ -1,10 +1,10 @@
 import React from 'react'
 
-interface ICardProps {
+export interface ICardProps {
   label: string
 }
 
-const Card = (props: ICardProps) => {
+export const Card = (props: ICardProps) => {
   return <button>{props.label}</button>
 }
 
