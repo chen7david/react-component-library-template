@@ -21,5 +21,4 @@
 
 ```cmd
 npm i @rollup/plugin-node-resolve @rollup/plugin-commonjs @rollup/plugin-typescript rollup-plugin-dts --save-dev
-``
 ```
