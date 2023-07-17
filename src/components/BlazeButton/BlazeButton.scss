@@ -1,0 +1,45 @@
+@import '../../styles/blaze-theme/blaze-colors.scss';
+@import '../../styles/mixins/button-mixins.scss';
+
+button.ant-btn {
+  // Blaze button styles
+  @include stylize-blaze-button(blz-btn-retail, $monoFf, $retailAlt, $retail);
+  @include stylize-blaze-button(
+    blz-btn-dispatch,
+    $monoFf,
+    $dispatch,
+    $distroAlt
+  );
+  @include stylize-blaze-button(
+    blz-btn-blazepay,
+    $monoFf,
+    $blazepay,
+    $blazepayAlt
+  );
+  @include stylize-blaze-button(
+    blz-btn-manufacturing,
+    $monoFf,
+    $manufacturing,
+    $manufacturingAlt
+  );
+  @include stylize-blaze-button(blz-btn-grow, $monoFf, $grow, $growAlt);
+  @include stylize-blaze-button(blz-btn-distro, $monoFf, $distro, $distroAlt);
+  @include stylize-blaze-button(blz-btn-danger, $monoFf, $danger, $dangerAlt);
+  @include stylize-blaze-button(blz-btn-black, $monoFf, $black, $blackAlt);
+
+  // Default Ant Design buttons
+  //   @include stylize-blaze-button(ant-btn-primary, $monoFf, $retailAlt, $retail);
+  @include stylize-blaze-button(ant-btn-danger, $monoFf, $danger, $dangerAlt);
+}
+
+.ant-radio-button-wrapper {
+  border-width: 2px;
+
+  &:first-child {
+    border-radius: 8px 0 0 8px !important;
+  }
+
+  &:last-child {
+    border-radius: 0 8px 8px 0 !important;
+  }
+}

@@ -1,0 +1,109 @@
+@mixin button-colors($font-color, $background-color, $type) {
+  // Added !important to work on antd v5
+  color: $font-color !important;
+
+  @if $type == link {
+    background-color: transparent !important;
+  } @else {
+    // Added !important to work on antd v5
+    background-color: $background-color !important;
+  }
+
+  @if $type == link {
+    border-color: transparent !important;
+  } @else if $type == default {
+    // Secondary button style
+    border-color: $font-color !important;
+  } @else {
+    border-color: $background-color !important;
+  }
+}
+
+@mixin disabled-button-style($font-color, $background-color, $type: primary) {
+  @include button-colors($font-color, $background-color, $type);
+  opacity: 0.4 !important;
+  cursor: not-allowed !important;
+}
+
+@mixin hover-button-style($font-color, $background-color, $type: primary) {
+  @include button-colors($font-color, $background-color, $type);
+
+  @if $type == link {
+    background-color: $monoFa !important;
+    color: lighten($font-color, 15%) !important;
+  }
+}
+
+@mixin stylize-blaze-button(
+  $property,
+  $font-color,
+  $background-color,
+  $hover-color,
+  $type: primary
+) {
+  cursor: pointer !important;
+  &.#{$property} {
+    @include button-colors($font-color, $background-color, $type);
+
+    @if $type != link {
+      &.ant-btn-background-ghost {
+        color: $background-color !important;
+        //added to work on antd v5
+        background-color: transparent !important;
+
+        &:disabled,
+        &:disabled:hover {
+          @include disabled-button-style($background-color, transparent);
+          border-color: $background-color !important;
+        }
+
+        &:hover {
+          @include hover-button-style($background-color, $hover-color, $type);
+
+          background-color: $hover-color !important;
+          color: $monoFf !important;
+        }
+      }
+    }
+
+    &:disabled,
+    &:disabled:hover {
+      @include disabled-button-style($font-color, $background-color, $type);
+    }
+
+    &:hover {
+      @include hover-button-style($font-color, $hover-color, $type);
+    }
+  }
+
+  &.#{$property}.ant-btn-link {
+    @include button-colors($background-color, transparent, link);
+
+    &:disabled,
+    &:disabled:hover {
+      @include disabled-button-style($background-color, transparent, link);
+    }
+
+    &:hover {
+      @include hover-button-style($background-color, $hover-color, link);
+    }
+  }
+
+  &.#{$property}.ant-btn-default {
+    @include button-colors($mono77, $monoFf, default);
+    border-color: $mono77 !important;
+
+    &:disabled,
+    &:disabled:hover {
+      @include disabled-button-style($background-color, transparent, default);
+    }
+
+    &:hover {
+      @include hover-button-style($background-color, $monoFf, default);
+    }
+  }
+
+  &.#{$property}.ant-btn-loading {
+    cursor: wait !important;
+  }
+}
