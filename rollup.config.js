@@ -3,6 +3,7 @@ import typescript from '@rollup/plugin-typescript'
 import commonjs from '@rollup/plugin-commonjs'
 import dts from 'rollup-plugin-dts'
 import pkg from './package.json' assert { type: 'json' }
+import postcss from 'rollup-plugin-postcss'
 
 export default [
   {
@@ -22,12 +23,14 @@ export default [
     plugins: [
       resolve(),
       commonjs(),
-      typescript({ tsconfig: './tsconfig.json' })
+      typescript({ tsconfig: './tsconfig.json' }),
+      postcss()
     ]
   },
   {
     input: 'dist/esm/types/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-    plugins: [dts()]
+    plugins: [dts()],
+    external: [/\.css$/]
   }
 ]
