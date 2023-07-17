@@ -1,12 +1,12 @@
 import { Card } from './Card'
 
 export default {
-    title: 'Blaze/Card',
-    component: Card
+  title: 'Blaze/Card',
+  component: Card
 }
 
 export const Default = {
-    args: {
-        label: 'Hello World'
-    }
+  args: {
+    label: 'Hello World'
+  }
 }
