@@ -1,11 +1,11 @@
 import React from 'react'
-
-export interface ICardProps {
+import { Card as AntCard, CardProps } from 'antd'
+export interface ICardProps extends CardProps {
   label: string
 }
 
 export const Card = (props: ICardProps) => {
-  return <button>{props.label}</button>
+  return <AntCard {...props}>{props.label}</AntCard>
 }
 
 export default Card
